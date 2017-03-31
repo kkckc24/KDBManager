@@ -5,8 +5,10 @@ Written by KwangChun(David) Kang  (kkckc24@gmail.com)
 You can rewrite or improve the code, however please do not delete the original writter 
 - KwangChun(David) Kang  (kkckc24@gmail.com)
 
-# Linker and Properties
-You can simply read/test the project from Netbeans or Include and Rewrite some of the file as you want
+# Properties and Linked Lib.
+1. You can simply read/test the project from Netbeans or Include and Rewrite some of the file as you want
+2. It does not have dependencies except mysql lib.
+- Linked Libraries Lists: pthread, mysqlclient_r, crypto, ssl, m, z, rt
 
 # Main Sources
 1. KDBManager 
