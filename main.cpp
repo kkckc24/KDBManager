@@ -15,11 +15,11 @@ using namespace std;
 
 int main(int argc, char** argv) {
     // Database  Configuration
-    CONFIG->SetDBIP("192.168.3.8");
-    CONFIG->SetDBID("fdpu");
-    CONFIG->SetDBPASSWORD("fdpu");
+    CONFIG->SetDBIP("192.168.3.1");
+    CONFIG->SetDBID("testid");
+    CONFIG->SetDBPASSWORD("testpassword");
     CONFIG->SetDBPORT(3306);
-    CONFIG->SetDBSERVICEID("FDPU");
+    CONFIG->SetDBSERVICEID("test_dbname");
     CONFIG->SetDBPOOLSIZE(20);
     
     DBPoolingTest DBT;
