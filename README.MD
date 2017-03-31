@@ -102,9 +102,12 @@ Code for runing Simple Insert / Select with TESTDB Schema.
 Code that inherit KDBManager and having sample code
 
 # Caution
-Before using Mysql with Pooling Please reset the timeout in my.ini
+Please setup the timeout parameters in /etc/my.cnf.d/server.cnf if you want use pooling in mysql.
+Refer the below settings
 ```
-
+[mysqld]
+wait_timeout=31536000
+skip-name-resolve
+max_allowed_packet=128M
 interactive_timeout = 31536000
-wait_timeout = 31536000
 ```
