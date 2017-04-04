@@ -2,13 +2,13 @@
 Licensed under the Apache License, Version 2.0 (the "License");
 Written by KwangChun(David) Kang  (kkckc24@gmail.com)
 
-You can rewrite or improve the code, however please do not delete the original writter 
+You can rewrite or improve the code, unless do not delete original contributer.
 - KwangChun(David) Kang  (kkckc24@gmail.com)
 
 # Properties and Linked Lib.
-1. You can simply read/test the project from Netbeans or Include and Rewrite some of the file as you want
+1. You can simply import the project file from Netbeans or Include and Rewrite some of the file as you want
 2. It does not have dependencies except mysql lib.
-- Linked Libraries Lists: pthread, mysqlclient_r, crypto, ssl, m, z, rt
+- Linked Libraries: pthread, mysqlclient_r, crypto, ssl, m, z, rt
 
 # Main Sources
 1. KDBManager 
@@ -56,7 +56,7 @@ if(dbm.SelectQuery(&rs, "SELECT IDX, str_sample, date_sample FROM TESTDB")) {
 ```
 
 2. KDBConnectionPool 
-The Code supports Connection Pool and Non-Pooling with MySQL (or MariaDB).
+The class supports Connection Pool and Non-Pooling with MySQL (or MariaDB).
 If you do not want to use connection pool. Change the USE_POOL option in the KDBConnectionPool.h
 ```C++
 #define USE_POOL 1    // Pooling Enable
@@ -73,11 +73,11 @@ iMutex.unlock();
 ```
 
 2. KLogger
-<pre>Actually, I made the logger by using log4cxx, however, I made the sample KLogger with COUT/PRINTF 
+<pre>I made the logger by using log4cxx at the first place; however, I changed the code with COUT/PRINTF for your convenience.
 You can change your logger or change the code in the KDBManager/KDBConnectionPool</pre>
 
 3. DBConf
-For Database Configuration
+It will be used for Database Configuration.
 ```C++
 CONFIG->SetDBIP("IP");
 CONFIG->SetDBID("PASSWORD");
@@ -98,14 +98,14 @@ CREATE TABLE `TESTDB` (
 )
 ```
 1. main.cpp
-Code for runing Simple Insert / Select with TESTDB Schema.
+Sample code of Insert/Select with TESTDB Table.
 
 2. DBPoolingTest.cpp
-Code that inherit KDBManager and having sample code
+This Code shows how to inherit KDBManager for using mysql DB.
 
 # Caution
-Please setup the timeout parameters in /etc/my.cnf.d/server.cnf if you want use pooling in mysql.
-Refer the below settings
+Please setup the timeout parameters in /etc/my.cnf.d/server.cnf; if you want to use connection pools in mysql.
+Refer the following setting parameters.
 ```
 [mysqld]
 wait_timeout=31536000
